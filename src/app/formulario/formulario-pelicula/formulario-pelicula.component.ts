@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import { FormBuilder, FormArray, Validators } from '@angular/forms'
+import { FormBuilder, FormArray, Validator, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-formulario-pelicula',
@@ -18,7 +17,7 @@ export class FormularioPeliculaComponent {
     fecha:[''],
     actores: this.fb.group ({
       cantidad: [''],
-      nombreActor: [''],
+      nombresActor: [''],
     }),
     secuelas: this.fb.array ([ this.fb.control('')])
   }) 
@@ -34,6 +33,20 @@ export class FormularioPeliculaComponent {
   submit() {
     debugger;
     this.peliculaForm.value;
+
+    this.peliculaForm.setValue({
+      nombre: 'La Roca',
+      genero: 'Accion',
+      duracion: 168,
+      fecha: 10/10/1996,
+      actores: {
+        cantidad: 2,
+        nombresActor: 'Nicolas Cage y Sean Connery'
+      },
+      secuelas:this.secuelas.value
+    });
+
+    this.peliculaForm.patchValue({ duracion: 168});
   }
 
-} 
+}
