@@ -7,11 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormularioPeliculaComponent } from './formulario/formulario-pelicula/formulario-pelicula.component';
 import { from } from 'rxjs';
+import { HijoActorComponent } from './Data-Binding/actor/hijo-actor/hijo-actor.component';
+import { PadrePeliculaComponent } from './Data-Binding/padre-pelicula/padre-pelicula.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormularioPeliculaComponent
+    FormularioPeliculaComponent,
+    HijoActorComponent,
+    PadrePeliculaComponent
   ],
   imports: [
     BrowserModule,
