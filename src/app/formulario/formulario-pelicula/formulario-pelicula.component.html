@@ -1,0 +1,36 @@
+<p>formulario-pelicula works!</p>
+<form [formGroup]="peliculaForm" (ngSubmit)="guardarPelicula()">
+    <label>Nombre
+        <input type="text" formControlName="nombre">
+    </label>
+    <label>Genero
+        <input type="text" formControlName="genero">
+    </label>
+    <label>Duracion
+        <input type="number" formControlName="duracion">
+    </label>
+    <label>Fecha
+        <input type="date" formControlName="fecha">
+    </label>
+    <h3>Actores</h3>
+    <label>Cantidad de actores
+        <input type="number" formControlName="cantidad">
+    </label>
+    <label>Nombres de actores
+        <input type="text" formControlName="nombresActor">
+    </label>
+
+    <div formArrayName="secuelas">
+        <h3>Secuelas</h3>
+        <div *ngFor="let secuelas of secuelas.controls; let i = index" class="secuela">
+            <label>
+                Secuelas <input type="text" [formControlName]="i">
+            </label>
+        </div>
+        <button (click)="agregarSecuelas()">Agregar Secuela</button>
+    </div>
+
+
+    <button type="submit">Guardar</button>
+
+</form>
