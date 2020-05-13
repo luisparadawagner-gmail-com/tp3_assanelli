@@ -25,6 +25,29 @@ export class HijoActorComponent implements OnInit {
     
   };
 
+  actor1 : Actor[] = [{
+    nombre: 'Sean Connery',
+    pelicula: 'La Roca',
+    protagonista: true,
+    edad: 89,
+    lugarNac: 'Edimburgo, Reino Unido'
+  },
+  {
+  nombre: 'Ed Harris',
+    pelicula: 'La Roca',
+    protagonista: true,
+    edad: 69,
+    lugarNac: 'Nueva Jersey, EEUU'
+  },
+  {
+    nombre: 'David Morse',
+      pelicula: 'La Roca',
+      protagonista: false,
+      edad: 66,
+      lugarNac: 'Massachusetts, EEUU'
+    },
+];
+
   constructor() { 
     this.nombreActor = " Nicolas Cage"
   }

@@ -1,10 +1,10 @@
 <p>Actores</p>
 
-<p>Nombre del actor: {{ nombreActor }}</p>
-<p>Pelicula: {{ actor.pelicula}}</p>
-<p>Protagonista: {{ actor.protagonista}}</p>
+<p>Nombre del actor: {{ nombreActor | uppercase }}</p>
+<p>Pelicula: {{ actor.pelicula | uppercase}}</p>
+<p>Protagonista: {{ actor.protagonista }}</p>
 <p>Edad: {{ actor.edad }}</p>
-<p>Lugar de nacimiento: {{ actor.lugarNac }}</p>
+<p>Lugar de nacimiento: {{ actor.lugarNac | lowercase}}</p>
 
 <br>
 <div>
@@ -19,5 +19,17 @@
 <div>
 
     <input [(ngModel)]="pelicula" />
-    <p>{{ pelicula }}</p>
+    <p>{{ pelicula | uppercase }}</p>
 </div>
+
+<br />
+<ul *ngIf="verActor">
+
+    <h3>Reparto</h3>
+    <li *ngFor="let actor of actor1">
+        {{ actor.nombre | uppercase }}
+        <br /> {{ actor.edad }}
+        <br /> {{ actor.lugarNac }}
+        <p *ngIf="actor.nombre === 'La Roca'">Reparto de pelicula</p>
+    </li>
+</ul>
