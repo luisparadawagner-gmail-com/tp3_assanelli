@@ -1,1 +1,23 @@
-<p>hijo-actor works!</p>
+<p>Actores</p>
+
+<p>Nombre del actor: {{ nombreActor }}</p>
+<p>Pelicula: {{ actor.pelicula}}</p>
+<p>Protagonista: {{ actor.protagonista}}</p>
+<p>Edad: {{ actor.edad }}</p>
+<p>Lugar de nacimiento: {{ actor.lugarNac }}</p>
+
+<br>
+<div>
+    <img [src]="imagenActor" [title]="tooltip" [width]="anchoImg" [height]="altoImg" />
+</div>
+<br>
+<div>
+    <button (click)="verActor(nombreActor)">Ver Actor</button>
+</div>
+<br>
+
+<div>
+
+    <input [(ngModel)]="pelicula" />
+    <p>{{ pelicula }}</p>
+</div>
