@@ -9,6 +9,7 @@ import { FormularioPeliculaComponent } from './formulario/formulario-pelicula/fo
 import { from } from 'rxjs';
 import { HijoActorComponent } from './Data-Binding/hijo-actor/hijo-actor.component';
 import { PadrePeliculaComponent } from './Data-Binding/padre-pelicula/padre-pelicula.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PadrePeliculaComponent } from './Data-Binding/padre-pelicula/padre-peli
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
