@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Actor } from './../clase/Actor';
 
 @Component({
@@ -7,6 +7,9 @@ import { Actor } from './../clase/Actor';
   styleUrls: ['./hijo-actor.component.css']
 })
 export class HijoActorComponent implements OnInit {
+
+  @Input () peliculaHijo: string;
+  @Output () peliculaHijoEvento = new EventEmitter<string>();
 
   nombreActor: string;
   pelicula: string = "La Roca";
@@ -56,6 +59,10 @@ export class HijoActorComponent implements OnInit {
 
   verActor(actor : any) {
     alert('Actor:' + actor);
+  }
+
+  cambioPelicula() {
+    this.peliculaHijoEvento.emit('Con Air');
   }
 
 }
